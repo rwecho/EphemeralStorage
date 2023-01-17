@@ -1,0 +1,27 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Docker Build & Push Backend action to ttl.sh
+      uses: mr-smithers-excellent/docker-build-push@v5.6
+      with:
+        image: rwecho/ttl-app
+        dockerfile: Dockerfile
+        directory: .
+        registry: ttl.sh
+        addLatest: true
+        addTimestamp: false
+        labels: $(date +%s)
