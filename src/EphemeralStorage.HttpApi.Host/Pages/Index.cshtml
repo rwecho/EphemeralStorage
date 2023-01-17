@@ -1,0 +1,78 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Ttl Storage";
+    Layout = "_Empty";
+}
+
+
+<div class="bg-danger text-white">
+    <div class="container-sm col-lg-8 offset-lg-2">
+        <div class="row" style="padding-top: 40px;">
+            <div class="row">
+                <div class="col">
+                    <h1>ttl.sh</h1>
+                </div>
+                <div class="col-auto">
+                    <h1>ttl.sh</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-center pt-4">
+
+            <h1 class="Display-1 fw-bold">
+                Anonymous & ephemeral
+            </h1>
+
+            <h1 class="Display-1  fw-bold">
+                file storage
+            </h1>
+        </div>
+
+        <div class="row">
+            <div class="mt-4 col ">
+                <div class="codeblock">
+                    <div class="code fw-bold lh-md">
+                        <div class="row">
+                            <div class="col">$ curl -F 'file=@@hello.txt' http://ttl.sh/api/files</div>
+                            <div class="col"><span class="text-secondary ms-4"> # upload a
+                                    file </span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col">$ curl http://ttl.sh/api/files?hash=xxxxxxxx</div>
+                            <div class="col"><span class="text-secondary ms-4"> # download a
+                                    file </span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-center py-4">
+            <div class="col">
+                <h3>Free to use. No need to sign-up. Open source.</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* <div class="container-sm text-black text-left mb-4 col-lg-8 offset-lg-2">
+    <div class="row my-4 text-center ">
+    <div class="col fs-1 fw-bolder ">How to use ttl.sh</div>
+    </div>
+
+    <div class="row">
+    <div class="col ">
+    <ul class="list-unstyled fw-normal ">
+    <li>1. Tag </li>
+    <hr>
+    <li>2. Tag </li>
+    <hr>
+    <li>3. Tag </li>
+    <hr>
+    </ul>
+    </div>
+    </div>
+
+    </div> *@
