@@ -7,14 +7,14 @@ WORKDIR /src
 COPY . .
 
 RUN dotnet restore -nowarn:msb3202,nu1503
-RUN dotnet build --no-restore -c Release -o /app ./src/EphemeralStorage.HttpApi.Host/EphemeralStorage.HttpApi.Host.csproj
+RUN dotnet build --no-restore -c Release -o /app ./src/EphemeralStorage/EphemeralStorage.csproj
 
 
 FROM build AS publish
 RUN ls -lh
-RUN dotnet publish --no-restore -c Release -o /app ./src/EphemeralStorage.HttpApi.Host/EphemeralStorage.HttpApi.Host.csproj
+RUN dotnet publish --no-restore -c Release -o /app ./src/EphemeralStorage/EphemeralStorage.csproj
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
-CMD ["dotnet", "EphemeralStorage.HttpApi.Host.dll"]
+CMD ["dotnet", "EphemeralStorage.dll"]

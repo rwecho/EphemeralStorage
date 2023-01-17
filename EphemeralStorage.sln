@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0B0A047B-B8CD-4FB8-A11C-E0E3050F9617}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EphemeralStorage", "src\EphemeralStorage.HttpApi.Host\EphemeralStorage.csproj", "{2233930D-FF69-453D-8115-724B20E831EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EphemeralStorage", "src\EphemeralStorage\EphemeralStorage.csproj", "{2233930D-FF69-453D-8115-724B20E831EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
