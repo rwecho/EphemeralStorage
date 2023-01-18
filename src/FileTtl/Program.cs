@@ -53,6 +53,7 @@ builder.Services.AddQuartzServer(options =>
 
 // inject services.
 builder.Services.AddSingleton<FileItemStorage>();
+builder.Services.AddTransient<FileManager>();
 
 
 var app = builder.Build();

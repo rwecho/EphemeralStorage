@@ -1,22 +1,22 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Ttl Storage";
+    ViewData["Title"] = "FileTtl | An anonymous & ephemeral file storage";
     Layout = "_Empty";
 }
 
 <div class="text-white" style="background-color: #337AB7;">
-    <div class="container">
+    <div class="container mx-max-1020">
         <div class="row " style="padding-top: 40px;">
             <div class="col">
-                <h1>filettl.store</h1>
+                <h1 class="fs-3 fw-bold">filettl.store</h1>
             </div>
-            <div class="col-auto d-flex align-items-center">
-                <h1 class="fs-5">Contributed by rwecho</h1>
+            <div class="col-auto d-flex align-items-center ">
+                <h1 class="fs-6  mb-0">Contributed by rwecho</h1>
             </div>
         </div>
 
-        <div style="max-width: 780px;" class="mx-auto">
+        <div class="container mx-max-780">
             <div class="row text-center pt-5">
 
                 <h1 class="Display-1 fw-bold">
@@ -70,13 +70,97 @@
     </div>
 </div>
 
-<div class="container" style="max-width: 780px;">
+<div class="container mx-max-1020">
+    <div class="container mx-max-780">
+        <form method="post" enctype="multipart/form-data">
+            <div class="row text-center my-5">
+                <h1 class="Display-1 fw-bold">Upload a file</h1>
+            </div>
 
-    <div class="row text-center my-5">
-        <h1 class="Display-1 fw-bold">How to use filettl.store</h1>
+            <div class="row mb-3 ">
+                <div class="col">
+                    <div>
+                        <label for="formFile" class="form-label">Select a file1</label>
+                        <input class="form-control" type="file" id="formFile" asp-for="SelectedFile">
+                    </div>
+                </div>
+                <div class="col-auto d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </div>
+            </div>
+        </form>
+
+        @if (this.Model.Hash != null)
+        {
+            <div class="row">
+                <div class="col">
+                    <a href="/api/files?hash=@this.Model.Hash">Click to download @this.Model.FileName</a>
+                </div>
+            </div>
+        }
     </div>
 
-    <div class="row">
+    <div class="my-5">
+        <div class="row">
+            <div class="col">
+                <!-- Jumbotron -->
+                <div class="p-4 shadow-4 rounded-3" style="background-color: hsl(0, 0%, 94%);">
+                    <h2>Anonymous</h2>
+                    <p>
 
+                        No login required. We can upload any file under 100MB. And get a hash returned to access
+                        anyonmous.
+                    </p>
+
+                </div>
+                <!-- Jumbotron -->
+            </div>
+            <div class="col">
+                <!-- Jumbotron -->
+                <div class="p-4 shadow-4 rounded-3" style="background-color: hsl(0, 0%, 94%);">
+                    <h2>Ephemeral</h2>
+                    <p>
+                        The file is valid for 24 hours. Since that we can not access anymore.
+                    </p>
+                </div>
+                <!-- Jumbotron -->
+            </div>
+            <div class="col">
+                <!-- Jumbotron -->
+                <div class="p-4 shadow-4 rounded-3" style="background-color: hsl(0, 0%, 94%);">
+                    <h2>Self-Hosting</h2>
+                    <p>
+                        If we want to optmize our unused VPS, we can deploy it with <a
+                            href="https://github.com/rwecho/FileTtl">open source</a> and free
+                        docker image.
+                    </p>
+
+                </div>
+                <!-- Jumbotron -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-max-780">
+        <div class="row text-center my-5">
+            <h1 class="Display-1 fw-bold">How we're using it</h1>
+
+
+        </div>
+
+        <div class="row mb-3 ">
+            <div class="col">
+                <h5 class="fw-bold">Passing files between the mathines.</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <p>
+                In some jobs, it's necessary to copy files to remote computers. In these cases, sometimes it's done through SSH. As I usually use the system's default terminal, file operations need to be done through SCP, which can be cumbersome despite being just a few commands. Additionally, some remote tools like xshell, todesk, etc. may not work on some computers for copying or transferring files. Moreover, for some programmers, there's always one or two VPSs that are idle. Instead of letting them go to waste, it would be better to make use of them and let others take advantage of them for a short time. If it provides convenience for you, that is the meaning of this project.
+            </p>
+            <p>filettl.store solves this by making an ephemeral and anonymous files storage.</p>
+        </div>
     </div>
 </div>
+
+<div style="margin-bottom: 64px;"></div>

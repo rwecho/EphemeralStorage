@@ -16,9 +16,11 @@ html {
   position: relative;
   min-height: 100%;
 }
-
-.container {
+.mx-max-1020{
   max-width: 1020px;
+}
+.mx-max-780{
+  max-width: 780px;
 }
 
 .codeblock
