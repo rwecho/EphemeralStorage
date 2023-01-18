@@ -1,12 +1,12 @@
-﻿using EphemeralStorage.Controllers;
+﻿using FileTtl.Controllers;
 using Microsoft.Extensions.Options;
 using Quartz;
 
-namespace EphemeralStorage.BackgroundJobs;
+namespace FileTtl.BackgroundJobs;
 
 public class CleanupExpiredFilesJob : IJob
 {
-    public CleanupExpiredFilesJob(ILogger<CleanupExpiredFilesJob> logger, 
+    public CleanupExpiredFilesJob(ILogger<CleanupExpiredFilesJob> logger,
         FileItemStorage fileItemStorage,
         IOptions<FileStorageOptions> options)
     {

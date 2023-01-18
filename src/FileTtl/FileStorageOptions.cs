@@ -1,4 +1,4 @@
-﻿namespace EphemeralStorage.BackgroundJobs;
+﻿namespace FileTtl.BackgroundJobs;
 
 public class FileStorageOptions
 {

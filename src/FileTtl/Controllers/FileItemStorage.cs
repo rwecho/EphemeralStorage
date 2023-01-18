@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace EphemeralStorage.Controllers;
+namespace FileTtl.Controllers;
 
 public class FileItemStorage
 {
@@ -28,7 +28,7 @@ public class FileItemStorage
         {
             await Lock.WaitAsync();
             using var stream = File.OpenRead(this.FilePath);
-            this.FileItems = await JsonSerializer.DeserializeAsync<Dictionary<string, FileItem>>(stream)??new();
+            this.FileItems = await JsonSerializer.DeserializeAsync<Dictionary<string, FileItem>>(stream) ?? new();
         }
         catch (JsonException)
         {

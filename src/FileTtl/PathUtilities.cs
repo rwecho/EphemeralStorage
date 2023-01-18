@@ -1,9 +1,9 @@
 ﻿
 using System.Reflection;
 
-namespace EphemeralStorage;
+namespace FileTtl;
 
-public static class PathUtilities 
+public static class PathUtilities
 {
     static PathUtilities()
     {

@@ -17,6 +17,10 @@ html {
   min-height: 100%;
 }
 
+.container {
+  max-width: 1020px;
+}
+
 .codeblock
 {
   box-shadow: 0 8px 24px 0 rgb(0 0 0 / 10%);

@@ -1,10 +1,10 @@
-﻿using EphemeralStorage.BackgroundJobs;
+﻿using FileTtl.BackgroundJobs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System.IO;
 using System.Security.Cryptography;
 
-namespace EphemeralStorage.Controllers;
+namespace FileTtl.Controllers;
 
 [Route("/api/files")]
 public class FilesController : Controller
@@ -53,7 +53,7 @@ public class FilesController : Controller
 
             item = item with
             {
-              LastModified = DateTime.Now
+                LastModified = DateTime.Now
             };
             await this.FileItemStorage.SetAsync(hash, item);
 

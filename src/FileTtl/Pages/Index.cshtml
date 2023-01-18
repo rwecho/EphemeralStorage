@@ -1,0 +1,71 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Ttl Storage";
+    Layout = "_Empty";
+}
+
+<div class="text-white" style="background-color: #337AB7;">
+    <div class="container">
+        <div class="row " style="padding-top: 40px;">
+            <div class="col">
+                <h1>filettl.store</h1>
+            </div>
+            <div class="col-auto d-flex align-items-center">
+                <h1 class="fs-5">Contributed by rwecho</h1>
+            </div>
+        </div>
+
+        <div style="max-width: 780px;" class="mx-auto">
+            <div class="row text-center pt-5">
+
+                <h1 class="Display-1 fw-bold">
+                    Anonymous & ephemeral
+                </h1>
+
+                <h1 class="Display-1  fw-bold">
+                    file storage
+                </h1>
+            </div>
+
+            <div class="row">
+                <div class="mt-5 col mx-auto">
+                    <div class="codeblock ln-md">
+                        <div class="code fw-bold lh-base">
+                            <div class="row">
+                                <div class="col">$ curl https://filettl.store/api/files -F file=@@1.txt</div>
+                                <div class="col-4"><span class="text-secondary ms-5"> # upload a
+                                        file </span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col text-break">
+                                    {"hash":"B6D81B360A5672D80C27430F39153E2C","fileName":"1.txt","contentType":"text/plain","extensions":".txt","fileSize":1048576,"lastModified":"2023-01-17T22:09:52.5542411+08:00"}
+                                </div>
+                                <div class="col-4"><span class="text-secondary ms-5"> # file hash information </span>
+                                </div>
+                            </div>
+
+                            <div class="row">&nbsp; </div>
+
+                            <div class="row">
+                                <div class="col text-break">
+                                    $ curl https://filettl.store/api/files?hash=B6D81B360A5672D80C27430F39153E2C
+                                    --output 2.txt
+                                </div>
+                                <div class="col-4"><span class="text-secondary ms-5"> # download a
+                                        file </span></div>
+                            </div>
+                            <div class="row">&nbsp; </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center py-5">
+            <div class="col">
+                <h3>Free to use. No need to sign-up. Open source.</h3>
+            </div>
+        </div>
+    </div>
+</div>

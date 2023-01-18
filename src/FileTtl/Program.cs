@@ -1,5 +1,5 @@
-using EphemeralStorage.BackgroundJobs;
-using EphemeralStorage.Controllers;
+using FileTtl.BackgroundJobs;
+using FileTtl.Controllers;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.Extensions.Options;
 using Quartz;
@@ -57,7 +57,7 @@ builder.Services.AddSingleton<FileItemStorage>();
 
 var app = builder.Build();
 
-var form =  app.Services.GetRequiredService<IOptions<FormOptions>>();
+var form = app.Services.GetRequiredService<IOptions<FormOptions>>();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
