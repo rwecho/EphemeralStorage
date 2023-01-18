@@ -23,7 +23,7 @@ public class FilesController : Controller
     {
         if (file == null)
         {
-            ModelState.AddModelError("File", $"The file size exceeds the limit.");
+            ModelState.AddModelError("File", $"The file can not be empty.");
             return this.BadRequest(ModelState);
         }
 
