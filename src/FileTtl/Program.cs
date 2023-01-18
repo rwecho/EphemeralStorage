@@ -27,7 +27,7 @@ builder.Services.Configure<FileStorageOptions>(configuration.GetSection("FileSto
 // configure controllers
 builder.Services.AddControllers();
 #if DEBUG
-    builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen();
 #endif
 
 // confgure quartz
@@ -70,7 +70,9 @@ else
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseHttpLogging();
 }
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
